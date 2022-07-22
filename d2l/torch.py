@@ -204,9 +204,9 @@ def load_data_fashion_mnist(batch_size, resize=None):
     mnist_test = torchvision.datasets.FashionMNIST(
         root="../data", train=False, transform=trans, download=True)
     return (data.DataLoader(mnist_train, batch_size, shuffle=True,
-                            num_workers=get_dataloader_workers()),
+                            num_workers=0),
             data.DataLoader(mnist_test, batch_size, shuffle=False,
-                            num_workers=get_dataloader_workers()))
+                            num_workers=0))
 
 def accuracy(y_hat, y):
     """计算预测正确的数量
