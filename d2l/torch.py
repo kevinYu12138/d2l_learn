@@ -309,6 +309,8 @@ class Animator:
             self.axes[0].plot(x, y, fmt)
         self.config_axes()
         display.display(self.fig)
+        #plt.draw()          # 由于jupyter是每次会自动调用图像显示函数的，
+        #plt.pause(0.1)    # 所以在pycharm中要加这两句，才能显示动图
         display.clear_output(wait=True)
 
 def train_ch3(net, train_iter, test_iter, loss, num_epochs, updater):
